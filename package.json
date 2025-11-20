@@ -10,6 +10,14 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@catppuccin/codemirror": "^1.0.1",
+    "@catppuccin/tailwindcss": "^1.0.0",
+    "@codemirror/autocomplete": "^6.19.1",
+    "@codemirror/commands": "^6.10.0",
+    "@codemirror/lang-json": "^6.0.2",
+    "@codemirror/lint": "^6.9.2",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.7",
     "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0"

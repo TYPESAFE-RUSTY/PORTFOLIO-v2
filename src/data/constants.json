@@ -1,0 +1,157 @@
+{
+    "fileName": "~",
+    "fileType": "folder",
+    "fileExtension": null,
+    "data": {
+        "files": [
+            {
+                "fileName": "about_me",
+                "fileType": "file",
+                "fileExtension": "json",
+                "data": {
+                    "title": "A Passionate Developer",
+                    "content": "Hi! I'm Alex, a full-stack developer with 5+ years of experience specializing in React, TypeScript, and Node.js. I love building intuitive, performant user interfaces and tackling complex backend architectures. This portfolio is built using Next.js and Tailwind CSS.",
+                    "status": "Available for new projects."
+                }
+            },
+            {
+                "fileName": "education",
+                "fileType": "file",
+                "fileExtension": "json",
+                "data": {
+                    "institution": "University of Tech",
+                    "degree": "B.S. in Computer Science",
+                    "duration": "2016 - 2020",
+                    "gpa": "3.8/4.0",
+                    "focus": [
+                        "Web Development",
+                        "Database Systems"
+                    ]
+                }
+            },
+            {
+                "fileName": "projects",
+                "fileType": "folder",
+                "fileExtension": null,
+                "data": {
+                    "files": [
+                        {
+                            "fileName": "eCommerce_Platform",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "E-Commerce Microservices Platform",
+                                "tech_stack": [
+                                    "React",
+                                    "TypeScript",
+                                    "Node.js (NestJS)",
+                                    "PostgreSQL",
+                                    "Docker"
+                                ],
+                                "description": "Built a scalable e-commerce application using a microservices architecture. Implemented Stripe payment integration and real-time inventory tracking via WebSockets.",
+                                "repo": "https://github.com/alex/ecommerce-repo"
+                            }
+                        },
+                        {
+                            "fileName": "terminal_portfolio_app",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "Terminal Portfolio App (This App!)",
+                                "tech_stack": [
+                                    "Next.js",
+                                    "Tailwind CSS",
+                                    "CodeMirror 6",
+                                    "TypeScript"
+                                ],
+                                "description": "A self-contained portfolio designed to mimic a Linux terminal. Features custom CLI commands (like 'bat' and 'cd') and dynamic syntax-highlighting.",
+                                "repo": "https://github.com/alex/terminal-portfolio"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "fileName": "skills",
+                "fileType": "folder",
+                "fileExtension": null,
+                "data": {
+                    "files": [
+                        {
+                            "fileName": "temp",
+                            "fileType": "folder",
+                            "fileExtension": null,
+                            "data": {
+                                "files": []
+                            }
+                        },
+                        {
+                            "fileName": "frontend",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "languages": [
+                                    "JavaScript (ES6+)",
+                                    "TypeScript",
+                                    "HTML5",
+                                    "CSS3"
+                                ],
+                                "frameworks": [
+                                    "React",
+                                    "Next.js",
+                                    "Redux"
+                                ],
+                                "styling": [
+                                    "Tailwind CSS",
+                                    "SASS",
+                                    "Styled Components"
+                                ]
+                            }
+                        },
+                        {
+                            "fileName": "backend",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "languages": [
+                                    "Node.js",
+                                    "Python",
+                                    "Go"
+                                ],
+                                "frameworks": [
+                                    "Express",
+                                    "NestJS",
+                                    "Django (Basic)"
+                                ],
+                                "databases": [
+                                    "PostgreSQL",
+                                    "MongoDB",
+                                    "Redis"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "fileName": "contact",
+                "fileType": "file",
+                "fileExtension": "json",
+                "data": {
+                    "email": "alex.dev@example.com",
+                    "linkedin": "https://linkedin.com/in/alex-developer",
+                    "github": "https://github.com/alex-dev",
+                    "note": "Feel free to reach out for collaboration!"
+                }
+            },
+            {
+                "fileName": "currFav",
+                "fileType": "file",
+                "fileExtension": "cpp",
+                "data": {
+                    "code": "#include <graphix.h>"
+                }
+            }
+        ]
+    }
+}
