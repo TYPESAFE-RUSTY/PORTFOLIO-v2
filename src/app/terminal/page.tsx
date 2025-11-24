@@ -83,9 +83,7 @@ export default function Terminal() {
             case commands.nop:
                 return setcontent((content) => boundedSet(content, <>
                     <CommandLine cwd={cwd} />
-                    <span className="text-ctp-green"></span>
-                </>
-                ))
+                    <span className="text-ctp-green"></span></>))
             case commands.quit:
                 return router.push('/');
             case commands.gui:
@@ -108,7 +106,11 @@ export default function Terminal() {
                 setcontent((content) => boundedSet(content, ls(cwd, input)));
                 break;
             case commands.tree:
-                setcontent((content) => boundedSet(content, <CommandOutput command={input} cwd={cwd} ><>constTree</></CommandOutput>))
+                setcontent((content) => boundedSet(content, <CommandOutput command={input} cwd={cwd} >
+                    <pre className="font-nerd-font-mono leading-none">
+                        {constTree()}
+                    </pre>
+                </CommandOutput>))
                 break;
             case commands.cat:
                 setcontent((content) => boundedSet(content, cat(cwd, input)));

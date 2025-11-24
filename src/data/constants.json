@@ -109,7 +109,7 @@
                 "data": {
                     "files": [
                         {
-                            "fileName": "seclore_internship",
+                            "fileName": "seclore",
                             "fileType": "file",
                             "fileExtension": "json",
                             "data": {
@@ -189,7 +189,7 @@
                             }
                         },
                         {
-                            "fileName": "rllox_interpreter",
+                            "fileName": "rlox_interpreter",
                             "fileType": "file",
                             "fileExtension": "json",
                             "data": {

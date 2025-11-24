@@ -81,7 +81,8 @@ export const cd = (cwd: string, input: string): string => {
     let temp = cwd.split('/');
     // get the target location.
     let target = input.split(' ')[1];
-    if (!target || target.length === 0) return "[usage] cd <target-dir>"
+    if (target.endsWith('/')) target = target.substring(0, target.length - 1); // if input has trailing /
+    if (!target) return "[usage] cd <target-dir>"
     if (target === '~') return '~'; // early return for home shortcut
     // generate target location as per the target.
     let targetList = target.split('/');

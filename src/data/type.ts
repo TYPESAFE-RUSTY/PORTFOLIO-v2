@@ -87,4 +87,36 @@ export type FileNode =
  */
 export type FileSystemRoot = FolderNode
 
-export const constTree = () => { return "tree view of the file" }
+let line = '│'
+let connector = '├'
+let flat = '─'
+let end = '└'
+
+export const constTree = () => {
+    return `~
+│   about_me.json
+│   contact.json
+│   education.json
+│
+├───skills
+│       backend_systems.json
+│       frontend_web.json
+│
+├───experience
+│       seclore.json
+│       gdsc_co_lead.json
+│
+├───projects
+│   │   rlox_interpreter.json
+│   │   ark_fighting_game.json
+│   │
+│   └───side_projects
+│           software_rasterizer.json
+│           four_bit_cpu.json
+│
+│
+└───publications
+        eda_forecasting_lstm
+        ark_rollback_netcode.json" }
+    `;
+}
