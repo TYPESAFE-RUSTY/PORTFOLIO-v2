@@ -86,3 +86,5 @@ export type FileNode =
  * The interface for the root object of your file system.
  */
 export type FileSystemRoot = FolderNode
+
+export const constTree = () => { return "tree view of the file" }

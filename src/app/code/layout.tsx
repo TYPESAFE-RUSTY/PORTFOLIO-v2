@@ -68,7 +68,7 @@ export default function RootLayout() {
         })
     }
 
-    // function to dfs based on state
+    // function to dfs based on state and no indententation after 1 level deep.
     const fileSystem = () => {
         let result: React.ReactNode[] = [];
         type iter = [FileNode, string, number]
@@ -96,13 +96,18 @@ export default function RootLayout() {
             }
 
             if (item.fileType == 'folder') {
-                result.push(<button key={name} name={path} className="text-start px-2" onClick={(e) => toggleFolder(e)}>
+                // current item is a folder
+                result.push(<button key={name}
+                    name={path}
+                    className={`text-start px-2 ${depth > 0 ? 'text-xs ml-5 py-1.5' : ''}`}
+                    onClick={(e) => toggleFolder(e)}>
                     {getLogo('', !expandedFolders.has(path))} {name}
                 </button>)
                 if (expandedFolders.has(path)) {
                     item.data.files.forEach(i => stack.push([i, path, depth + 1]));
                 }
             }
+
 
         }
         return result;

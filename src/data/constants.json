@@ -9,9 +9,20 @@
                 "fileType": "file",
                 "fileExtension": "json",
                 "data": {
-                    "title": "A Passionate Developer",
-                    "content": "Hi! I'm Alex, a full-stack developer with 5+ years of experience specializing in React, TypeScript, and Node.js. I love building intuitive, performant user interfaces and tackling complex backend architectures. This portfolio is built using Next.js and Tailwind CSS.",
-                    "status": "Available for new projects."
+                    "title": "Computer Science Engineer & Cybersecurity Enthusiast",
+                    "content": "I am a dedicated Computer Science Engineer specializing in system programming, network security, and advanced algorithm development. My expertise spans Rust, C++, and modern web technologies, with a strong focus on high-performance computing, distributed systems, and data science applications. I thrive on translating complex mathematical concepts into robust software solutions.",
+                    "status": "Trainee Product Engineer @ Seclore."
+                }
+            },
+            {
+                "fileName": "contact",
+                "fileType": "file",
+                "fileExtension": "json",
+                "data": {
+                    "email": "singh.sahil.shivkumar@gmail.com",
+                    "linkedin": "https://linkedin.com/in/sahil-singh-typesafe-rusty",
+                    "github": "https://github.com/sahil-singh-typesafe-rusty",
+                    "note": "Please refer to my LinkedIn for the most detailed professional timeline."
                 }
             },
             {
@@ -19,55 +30,15 @@
                 "fileType": "file",
                 "fileExtension": "json",
                 "data": {
-                    "institution": "University of Tech",
-                    "degree": "B.S. in Computer Science",
-                    "duration": "2016 - 2020",
-                    "gpa": "3.8/4.0",
+                    "institution": "Don Bosco Institute of Technology (DBIT)",
+                    "degree": "Bachelor of Engineering in Computer Science (Honors in Data Science)",
+                    "duration": "Sep. 2021 - May 2025",
+                    "gpa": "Good Enough I feel",
                     "focus": [
-                        "Web Development",
-                        "Database Systems"
-                    ]
-                }
-            },
-            {
-                "fileName": "projects",
-                "fileType": "folder",
-                "fileExtension": null,
-                "data": {
-                    "files": [
-                        {
-                            "fileName": "eCommerce_Platform",
-                            "fileType": "file",
-                            "fileExtension": "json",
-                            "data": {
-                                "name": "E-Commerce Microservices Platform",
-                                "tech_stack": [
-                                    "React",
-                                    "TypeScript",
-                                    "Node.js (NestJS)",
-                                    "PostgreSQL",
-                                    "Docker"
-                                ],
-                                "description": "Built a scalable e-commerce application using a microservices architecture. Implemented Stripe payment integration and real-time inventory tracking via WebSockets.",
-                                "repo": "https://github.com/alex/ecommerce-repo"
-                            }
-                        },
-                        {
-                            "fileName": "terminal_portfolio_app",
-                            "fileType": "file",
-                            "fileExtension": "json",
-                            "data": {
-                                "name": "Terminal Portfolio App (This App!)",
-                                "tech_stack": [
-                                    "Next.js",
-                                    "Tailwind CSS",
-                                    "CodeMirror 6",
-                                    "TypeScript"
-                                ],
-                                "description": "A self-contained portfolio designed to mimic a Linux terminal. Features custom CLI commands (like 'bat' and 'cd') and dynamic syntax-highlighting.",
-                                "repo": "https://github.com/alex/terminal-portfolio"
-                            }
-                        }
+                        "Data Science (Honors)",
+                        "System Programming",
+                        "Networking & Security",
+                        "Algorithms"
                     ]
                 }
             },
@@ -78,15 +49,33 @@
                 "data": {
                     "files": [
                         {
-                            "fileName": "temp",
-                            "fileType": "folder",
-                            "fileExtension": null,
+                            "fileName": "backend_systems",
+                            "fileType": "file",
+                            "fileExtension": "json",
                             "data": {
-                                "files": []
+                                "languages": [
+                                    "Rust",
+                                    "C",
+                                    "C++",
+                                    "Python",
+                                    "Node.js"
+                                ],
+                                "frameworks": [
+                                    "Express.js",
+                                    "Django",
+                                    "Flask",
+                                    "Next.js"
+                                ],
+                                "styling": [],
+                                "databases": [
+                                    "PostgreSQL",
+                                    "Redis (Cache)",
+                                    "SQLite"
+                                ]
                             }
                         },
                         {
-                            "fileName": "frontend",
+                            "fileName": "frontend_web",
                             "fileType": "file",
                             "fileExtension": "json",
                             "data": {
@@ -98,35 +87,15 @@
                                 ],
                                 "frameworks": [
                                     "React",
-                                    "Next.js",
-                                    "Redux"
+                                    "Svelte",
+                                    "Three.js",
+                                    "React Three Fiber",
+                                    "GSAP"
                                 ],
                                 "styling": [
                                     "Tailwind CSS",
-                                    "SASS",
-                                    "Styled Components"
-                                ]
-                            }
-                        },
-                        {
-                            "fileName": "backend",
-                            "fileType": "file",
-                            "fileExtension": "json",
-                            "data": {
-                                "languages": [
-                                    "Node.js",
-                                    "Python",
-                                    "Go"
-                                ],
-                                "frameworks": [
-                                    "Express",
-                                    "NestJS",
-                                    "Django (Basic)"
-                                ],
-                                "databases": [
-                                    "PostgreSQL",
-                                    "MongoDB",
-                                    "Redis"
+                                    "SASS/SCSS",
+                                    "CSS Modules"
                                 ]
                             }
                         }
@@ -134,22 +103,164 @@
                 }
             },
             {
-                "fileName": "contact",
-                "fileType": "file",
-                "fileExtension": "json",
+                "fileName": "experience",
+                "fileType": "folder",
+                "fileExtension": null,
                 "data": {
-                    "email": "alex.dev@example.com",
-                    "linkedin": "https://linkedin.com/in/alex-developer",
-                    "github": "https://github.com/alex-dev",
-                    "note": "Feel free to reach out for collaboration!"
+                    "files": [
+                        {
+                            "fileName": "seclore_internship",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "Seclore (Cybersecurity Company)",
+                                "tech_stack": [
+                                    "Cybersecurity",
+                                    "Software Development",
+                                    "Data Protection"
+                                ],
+                                "description": "Currently working at Seclore, a leading enterprise digital rights management (EDRM) solution provider. Focus includes contributing to core software development, ensuring robust data security protocols, and advancing solutions for persistent information protection.",
+                                "repo": "N/A"
+                            }
+                        },
+                        {
+                            "fileName": "gdsc_co_lead",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "Co-Lead, GDSC-DBIT",
+                                "tech_stack": [
+                                    "Leadership",
+                                    "Three.js",
+                                    "Community Building",
+                                    "Event Management"
+                                ],
+                                "description": "Led the Google Developer Student Clubs chapter (Dec 2023 - Present), hosting 9+ workshops and events with a minimum of 60 attendees per event. Created the official GDSC-DBIT website and delivered technical workshops on topics like Three.js.",
+                                "repo": "N/A"
+                            }
+                        }
+                    ]
                 }
             },
             {
-                "fileName": "currFav",
-                "fileType": "file",
-                "fileExtension": "cpp",
+                "fileName": "projects",
+                "fileType": "folder",
+                "fileExtension": null,
                 "data": {
-                    "code": "#include <graphix.h>"
+                    "files": [
+                        {
+                            "fileName": "side_projects",
+                            "fileType": "folder",
+                            "fileExtension": null,
+                            "data": {
+                                "files": [
+                                    {
+                                        "fileName": "software_rasterizer",
+                                        "fileType": "file",
+                                        "fileExtension": "json",
+                                        "data": {
+                                            "name": "Software Rasterizer Engine",
+                                            "tech_stack": [
+                                                "C++",
+                                                "Computer Graphics",
+                                                "Linear Algebra",
+                                                "OBJ Parsing"
+                                            ],
+                                            "description": "Developed a complete software rasterizer from scratch in C++ without external graphics libraries. Features support for OBJ file reading, perspective projection, geometric manipulation, and output to BMP files. Implements a flexible Mesh class structure allowing overloading of Vertex and Fragment Shaders to generate low-poly terrains.",
+                                            "repo": "N/A"
+                                        }
+                                    },
+                                    {
+                                        "fileName": "four_bit_cpu",
+                                        "fileType": "file",
+                                        "fileExtension": "json",
+                                        "data": {
+                                            "name": "4-bit Central Processing Unit (CPU) Design",
+                                            "tech_stack": [
+                                                "Digital Logic",
+                                                "NAND Gates",
+                                                "Computer Architecture"
+                                            ],
+                                            "description": "Designed and implemented a functional 4-bit CPU built exclusively from fundamental NAND gates. Architecture includes a Control Unit (CU), Arithmetic Logic Unit (ALU - supporting Add/Subtract), three registers (Accumulator and General Purpose), 5 instruction types, and 5 bytes of accessible memory.",
+                                            "repo": "N/A"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "fileName": "rllox_interpreter",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "RLox (Custom Language Interpreter)",
+                                "tech_stack": [
+                                    "Rust",
+                                    "System Programming",
+                                    "Lexical Analysis",
+                                    "AST"
+                                ],
+                                "description": "Built a custom language interpreter in Rust, implementing dynamic keyword customization via a scanner, an efficient recursive descent parser for Abstract Syntax Tree (AST) generation, and a tree-walk interpreter for executing RLox code.",
+                                "repo": "N/A"
+                            }
+                        },
+                        {
+                            "fileName": "ark_fighting_game",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "ARK: 2D Fighting Game with Rollback Netcode",
+                                "tech_stack": [
+                                    "Networking",
+                                    "Godot Engine",
+                                    "GDScript",
+                                    "Game Development"
+                                ],
+                                "description": "Developed an online multiplayer 2D fighting game using Godot's Rollback Netcode library. Achieved near-lagless gameplay even with up to 300ms delay, integrating multiple attack moves for local and online battles.",
+                                "repo": "N/A"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "fileName": "publications",
+                "fileType": "folder",
+                "fileExtension": null,
+                "data": {
+                    "files": [
+                        {
+                            "fileName": "eda_forecasting_lstm",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "EDA and Forecasting using LSTM and FB Prophet on Mumbai Metropolitan Coastal Region.",
+                                "tech_stack": [
+                                    "LSTM",
+                                    "FB Prophet",
+                                    "Data Science",
+                                    "Time-Series Analysis"
+                                ],
+                                "description": "Published in the Proceedings of the International Conference on Climate Change 2025 (ICCC-2025). Focuses on applying advanced machine learning models (LSTM and FB Prophet) for Exploratory Data Analysis and predictive forecasting within a critical metropolitan coastal region.",
+                                "repo": "ISBN-978-93-48606-60-0"
+                            }
+                        },
+                        {
+                            "fileName": "ark_rollback_netcode",
+                            "fileType": "file",
+                            "fileExtension": "json",
+                            "data": {
+                                "name": "ARK: A 2D Fighting Game with Rollback Netcode.",
+                                "tech_stack": [
+                                    "Rollback Netcode",
+                                    "Game Development",
+                                    "Networking"
+                                ],
+                                "description": "Published in Smart Trends in Computing and Communications: Proceedings of SmartCom 2025, Volume 3 (Springer LNNS, 1459). Details the architectural design and implementation of the rollback netcode for the ARK 2D fighting game.",
+                                "repo": "ISBN-978-9819675043"
+                            }
+                        }
+                    ]
                 }
             }
         ]

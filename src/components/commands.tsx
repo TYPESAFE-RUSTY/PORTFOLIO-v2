@@ -21,8 +21,22 @@ export const getLogo = (extension: string | null, open: boolean = false) => {
 function reprFolder(name: string) { return <p>drwx <span className="text-ctp-blue"></span > {name}</p> }
 function reprFile(name: string, extension: "json" | "cpp" | null) { return <p>.rwx <span className="text-ctp-blue">{getLogo(extension)}</span> {name}.{extension}</p> }
 
+
+export const unsafeLs = (cwd: string) => { // cwd: always a valid directory
+    // iterate to the target folder
+    const folder = cwd.split('/').reverse();
+    folder.pop() // remove "root" from the cwd
+    const currentLocation = travelTree(fileSystemRoot, folder);
+
+
+    // get folders and files
+    let folders = getFolders(currentLocation).map(elem => elem.fileName);
+    let files = getFiles(currentLocation).map(elem => elem.fileName + '.' + elem.fileExtension);
+    return [...folders, ...files]
+}
+
 export const ls = (cwd: string, input: string) => {
-    if (input.split(" ").length !== 1) return <Error cwd={cwd} command={input} help>[USAGE] : ls</Error>
+    if (input.trim().split(" ").length !== 1) return <Error cwd={cwd} command={input} help>[USAGE] : ls</Error>
 
     // iterate to the target folder
     const folder = cwd.split('/').reverse();
@@ -63,20 +77,26 @@ export const cat = (cwd: string, input: string) => {
 }
 
 export const cd = (cwd: string, input: string): string => {
+    // get the current working directory array.
     let temp = cwd.split('/');
-    let target = input.split(' ')[1].split('/');
-    // check for faults
-    target.forEach(elem => elem === ".." ? temp.pop() : temp.push(elem));
+    // get the target location.
+    let target = input.split(' ')[1];
+    if (!target || target.length === 0) return "[usage] cd <target-dir>"
+    if (target === '~') return '~'; // early return for home shortcut
+    // generate target location as per the target.
+    let targetList = target.split('/');
+    targetList.forEach(elem => elem === ".." ? temp.pop() : temp.push(elem));
     temp.reverse().pop();
+    // copy the final to return back
     let final = [...temp];
-
     try {
+        // try travelling to that location
         travelTree(fileSystemRoot, temp);
         final.push('~');
         const res = final.reverse().join('/');
         return res;
     } catch (error) {
-        return cwd;
+        return `no directory named ${target} from ${cwd}`;
     }
 }
 
@@ -92,12 +112,13 @@ function travelTree(location: FolderNode, dir: string[]) {
     return travelTree(folder[0], dir);
 }
 
-function getFolders(location: FolderNode = fileSystemRoot): FolderNode[] {
+
+export function getFolders(location: FolderNode = fileSystemRoot): FolderNode[] {
     let res: FileNode[] = location.data.files;
     return res.filter((elem) => elem.fileType === "folder")
 }
 
-function getFiles(location: FolderNode = fileSystemRoot): FileNode[] {
+export function getFiles(location: FolderNode = fileSystemRoot): FileNode[] {
     let res: FileNode[] = location.data.files;
     return res.filter((elem) => elem.fileType === "file")
 }

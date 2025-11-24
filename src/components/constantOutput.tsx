@@ -1,4 +1,5 @@
 import CommandLine from "./commandLine"
+import { Error } from "./commandOutput"
 
 const SPLASH: string = `  ___ ___         .__  .__                               .__       .___._.
  /   |   \\   ____ |  | |  |   ____   __  _  _____________|  |    __| _/| |
@@ -17,25 +18,31 @@ const HELP: string = `  ___ ___         .__
 `
 
 export const Help = ({ cwd, command }: { cwd: string, command: string }) => {
+    if (command.split(" ").length !== 1) return <Error cwd={cwd} help command={command}><p>[Usage] help</p ></Error >
     return <>
         <CommandLine cwd={cwd} />
         <p className="text-ctp-yellow"><span className="text-ctp-green"></span>{command}</p>
-        <pre className="leading-none">
+        <pre className="leading-none text-[8px] md:text-lg">
             {HELP}
         </pre>
-        <p>
-            Available Commands: ls, cwd/pwd, cat, clear, help, quit, gui.
+        <p className="text-sm md:text-md">
+            Available Commands: quit, gui, clear, help, whoami, cwd/pwd, ls/dir, cat, cd.
+
         </p>
     </>
 }
 
 export const SplashScreen = () => {
     return <>
-        <pre className="leading-none">
+        <pre className="leading-none text-[8px] md:text-lg">
             {SPLASH}
         </pre>
-        <p>
-            Available Commands: ls, cwd/pwd, cat, clear, help, quit, gui.
+        <p className="text-sm md:text-md">
+            Available Commands: quit, gui, clear, help, whoami, cwd/pwd, ls/dir, cat, cd.
+            <br />
+            <span className="text-ctp-red">
+                if you are uncomfortable with terminals type gui and end this misery.
+            </span>
         </p>
     </>
 }

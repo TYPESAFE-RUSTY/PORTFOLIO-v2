@@ -1,43 +1,59 @@
 "use client";
 import data from "@/data/constants.json";
-import { FileSystemRoot } from "@/data/type";
+import { constTree, FileSystemRoot } from "@/data/type";
 import { useRouter } from "next/navigation";
 import { FormEvent, Fragment, useEffect, useState } from "react";
 import CommandLine from "@/components/commandLine";
 import { CommandOutput, Error } from "@/components/commandOutput";
 import { Help, SplashScreen } from "@/components/constantOutput";
-import { cat, cd, ls } from "@/components/commands";
+import { cat, cd, ls, unsafeLs } from "@/components/commands";
 
 const MAX_CONTENT: number = 10;
 const fileSystemRoot: FileSystemRoot = data as FileSystemRoot;
+// these two variables control tab to next feature 
+// todo!("find better way to do so.").
+let completionOptions: string[] = []
+let completionsChoice = 0
 
 enum commands {
+    nop,
     quit,
     gui,
     editor,
     clear,
     help,
     error,
+    whoami,
     cwd,
     ls,
     cat,
     cd,
     // todo
+    tree,
     bat // huge plus
 }
 
 function matcher(input: string | undefined): commands {
-    if (!input) return commands.error
-    if (input === "code .") return commands.editor;
+    // in case of null or empty input just forwar nop
+    if (!input || input.trim() === "") { return commands.nop; }
 
-    const command = input.split(" ").at(0)?.trim();
 
-    if (command === "quit" || command === 'exit') return commands.quit;
-    if (command === "gui") return commands.gui;
-    if (command === "clear") return commands.clear;
-    if (command === "help") return commands.help;
-    if (command === "cwd" || command === "pwd") return commands.cwd;
-    if (command === "ls") return commands.ls;
+    input = input.trim();
+    // command with no need for arguments
+    // no need to check anything if input is same open editor
+    if (input === "code ." || input === "code ~") return commands.editor;
+    if (input === "whoami") return commands.whoami;
+    if (input === "cwd" || input === "pwd") return commands.cwd;
+    if (input === "quit" || input === 'exit') return commands.quit;
+    if (input === "gui") return commands.gui;
+    if (input === "clear") return commands.clear;
+    if (input === "help") return commands.help;
+    if (input === "ls" || input === "dir") return commands.ls;
+    if (input === "tree") return commands.tree;
+
+    // commands tha accepts arguments
+    const command = input.split(" ").at(0)?.trim().toLowerCase();
+    // Check user input and convert it to a vliad commad.
     if (command === "cat") return commands.cat;
     if (command === "cd") return commands.cd;
     return commands.error;
@@ -64,6 +80,12 @@ export default function Terminal() {
         }
 
         switch (latestCommand) {
+            case commands.nop:
+                return setcontent((content) => boundedSet(content, <>
+                    <CommandLine cwd={cwd} />
+                    <span className="text-ctp-green"></span>
+                </>
+                ))
             case commands.quit:
                 return router.push('/');
             case commands.gui:
@@ -76,63 +98,88 @@ export default function Terminal() {
             case commands.help:
                 setcontent((content) => boundedSet(content, <Help cwd={cwd} command={input} />));
                 break;
+            case commands.whoami:
+                setcontent((content) => boundedSet(content, <CommandOutput cwd={cwd} command={input}><p>Computer Engineer from India</p></CommandOutput>))
+                break;
             case commands.cwd:
                 setcontent((content) => boundedSet(content, <CommandOutput cwd={cwd} command={input} >{cwd}</CommandOutput>));
                 break;
             case commands.ls:
                 setcontent((content) => boundedSet(content, ls(cwd, input)));
                 break;
+            case commands.tree:
+                setcontent((content) => boundedSet(content, <CommandOutput command={input} cwd={cwd} ><>constTree</></CommandOutput>))
+                break;
             case commands.cat:
                 setcontent((content) => boundedSet(content, cat(cwd, input)));
                 break;
             case commands.cd:
-                setCwd(curr => cd(curr, input));
-                setcontent((content) => boundedSet(content, <CommandOutput cwd={cwd} command={input} > <></></CommandOutput >));
-                break;
+                const res = cd(cwd, input);
+                if (!res.startsWith('~')) {
+                    setcontent((content) => boundedSet(content, <Error cwd={cwd} command={input} help><p>{res}</p></Error>));
+                }
+                else {
+                    setCwd(res);
+                    setcontent((content) => boundedSet(content, <CommandOutput cwd={cwd} command={input} > <></></CommandOutput >));
+                }
 
+                break;
             default:
                 setcontent((content) => boundedSet(content, <Error cwd={cwd} command={input} help={false}>
-                    <pre>&apos;{input.split(" ").at(0)?.trim()}&apos; is not a recognized command.
+                    <pre>&apos;{input}&apos; is not a recognized command.
                     </pre>
                 </Error>));
         }
 
+        completionsChoice = 0;
+        completionOptions = [];
         setInput("");
         setHistoryIndex(-1); // Reset history navigation on new command
     }
 
+    // to transfer user focus on input tag even if clicked anywhere
     useEffect(() => {
-        // to put focus on the input even if clicked anywhere in the page
         function handleClick() {
             document.querySelector("input")?.focus();
         }
 
         document.addEventListener("click", handleClick);
-
         return () => {
             document.removeEventListener("click", handleClick);
         };
     }, []);
 
+    // scroll to the bottom on size increase
     useEffect(() => {
         window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: "smooth" });
     }, [content]);
 
+
+    // handle special keys on input tag
     function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
         if (event.key === "ArrowUp") {
+            if (commandStore.length <= 0 || historyIndex > commandStore.length - 1) return;
             // Navigate to previous command
-            if (commandStore.length > 0 && historyIndex < commandStore.length - 1) {
-                const newIndex = historyIndex + 1;
-                setHistoryIndex(newIndex);
-                setInput(commandStore[commandStore.length - 1 - newIndex]); // Fetch command in reverse order
-            }
-        } else if (event.key === "ArrowDown") {
+            const newIndex = historyIndex + 1;
+            setHistoryIndex(newIndex);
+            setInput(commandStore[commandStore.length - 1 - newIndex]); // Fetch command in reverse order
+        }
+
+        if (event.key === "ArrowDown") {
             // Navigate to next command
-            if (historyIndex > -1) {
-                const newIndex = historyIndex - 1;
-                setHistoryIndex(newIndex);
-                setInput(commandStore[commandStore.length - 1 - newIndex]);
-            }
+            if (historyIndex < -1) return
+            const newIndex = historyIndex - 1;
+            setHistoryIndex(newIndex);
+            setInput(commandStore[commandStore.length - 1 - newIndex]);
+        }
+        // for tab to complete (currently ducktaped will find better solution)
+        if (event.key === "Tab" && (input.startsWith("cat") || input.startsWith("cd"))) {
+            event.preventDefault();
+            // check for recommendations only if needed
+            if (completionOptions.length === 0) completionOptions = unsafeLs(cwd);
+            let cat = input.startsWith('cat');
+            setInput(`${cat ? 'cat' : 'cd'} ${completionOptions[completionsChoice]}`)
+            completionsChoice = completionsChoice < completionOptions.length - 1 ? completionsChoice + 1 : 0;
         }
     }
 
@@ -152,7 +199,7 @@ export default function Terminal() {
                     autoComplete="off"
                     autoFocus
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleKeyDown} // Handle arrow key navigation
+                    onKeyDown={handleKeyDown} // Handle arrow key navigation and tab control
                     type="text"
                 />
             </form>
