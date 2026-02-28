@@ -18,9 +18,11 @@
     "@codemirror/lint": "^6.9.2",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.7",
-    "next": "16.0.3",
+    "faketerm": "^1.0.0",
+    "next": "^16.1.6",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",

@@ -10,7 +10,7 @@ export function CommandOutput({ cwd, command, children }: { cwd: string, command
     )
 }
 
-export const Error = ({ cwd, command, children, help }: { cwd: string, command: string, children: React.ReactNode, help: boolean }) => {
+export const Error = ({ cwd, command, children, help = false }: { cwd: string, command: string, children: React.ReactNode, help: boolean }) => {
     return <>
         <CommandLine cwd={cwd} />
         <p className="text-ctp-yellow"><span className="text-ctp-red"></span>{command}</p>

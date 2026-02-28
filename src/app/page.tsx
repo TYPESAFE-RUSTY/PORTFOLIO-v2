@@ -1,10 +1,7 @@
 export default function Home() {
   return (
     <>
-      <a href="./code">
-        code
-      </a>
-
+      <h1>This site is under development</h1>
       <a href="./terminal" className="mx-3">
         terminal
       </a>

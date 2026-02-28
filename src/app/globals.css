@@ -1,11 +1,20 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/frappe.css";
 
-
 @theme inline {
-  --font-nerd-font-mono: var(--font-nerd-font-mono);
+    --font-nerd-font-mono: var(--font-nerd-font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {}
+    :root {}
+}
+
+a {
+    color: var(--catppuccin-color-blue);
+    text-decoration: underline;
+}
+
+pre {
+    font-family: var(--font-nerd-font-mono);
+    line-height: initial;
 }
