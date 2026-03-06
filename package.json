@@ -18,7 +18,7 @@
     "@codemirror/lint": "^6.9.2",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.7",
-    "faketerm": "^1.0.0",
+    "faketerm": "^1.2.4",
     "next": "^16.1.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",

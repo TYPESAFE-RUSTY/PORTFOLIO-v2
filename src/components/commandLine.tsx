@@ -3,14 +3,14 @@
 let location = 'typesafe-rusty.github.io';
 
 // below return statements have some glyphs which are rendered only with nerd fonts so ignore wierd text
-export default function CommandLine({ cwd }: { cwd: string, }) {
+export default function CommandLine({ userName, cwd }: { userName: string, cwd: string, }) {
 
     return (
         <>
             <div className="text-ctp-green block md:hidden">[{cwd.length > 10 ? "…/" + cwd.split('/').pop() : cwd}]</div>
             <div className="text-ctp-mantle hidden md:block">
                 <span className=" text-ctp-surface0"></span>
-                <span className="bg-ctp-surface0 text-ctp-text">󰍲 GUEST</span>
+                <span className="bg-ctp-surface0 text-ctp-text">󰍲 {userName}</span>
                 <span className="bg-ctp-peach text-ctp-surface0"></span>
                 <span className="bg-ctp-peach"> {location} [{cwd.length > 10 ? "…/" + cwd.split('/').pop() : cwd}] </span>
                 <span className="bg-ctp-green text-ctp-peach"></span>

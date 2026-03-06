@@ -4,6 +4,65 @@
   "type": "DIR",
   "nodes": [
     {
+      "name": "top_secret",
+      "ext": null,
+      "type": "DIR",
+      "nodes": [
+        {
+          "name": "do_not_open",
+          "ext": null,
+          "type": "DIR",
+          "nodes": [
+            {
+              "name": "seriously",
+              "ext": null,
+              "type": "DIR",
+              "nodes": [
+                {
+                  "name": "classified",
+                  "ext": "txt",
+                  "type": "FILE",
+                  "nodes": [],
+                  "parentNode": null,
+                  "content": "Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you.\n\n(I can't believe you typed 'cd' that many times just to get rickrolled.)"
+                }
+              ],
+              "parentNode": null,
+              "content": null
+            }
+          ],
+          "parentNode": null,
+          "content": null
+        }
+      ],
+      "parentNode": null,
+      "content": null
+    },
+    {
+      "name": "todo",
+      "ext": "txt",
+      "type": "FILE",
+      "nodes": [],
+      "parentNode": null,
+      "content": "PORTFOLIO TO-DO LIST:\n[x] Spend 3 hours picking the *perfect* monospace font no one will notice\n[x] Reorganize directories for the 7th time\n[x] Spend 2 days fixing CSS so it looks correct on a 2012 ThinkPad resolution\n[x] Question every life decision that led to making a terminal portfolio\n[x] Pretend the site is \"minimalist\" instead of unfinished\n[ ] Rewrite portfolio in Rust by compiling directly to WASM"
+    },
+    {
+      "name": "",
+      "ext": "ssh",
+      "type": "FILE",
+      "nodes": [],
+      "parentNode": null,
+      "content": "-----BEGIN OPENSSH PRIVATE KEY-----\nVGhpcyBwcm9qZWN0IHdhcyBtYWRlIHBvc3NpYmxlIHVzaW5nIGZ\nha2V0ZXJtIHRyeSBpdCBvdXQgbm93Lg0KcnVuIG5wbSBpIGZha2\nV0ZXJtIHRvIGluc3RhbGwgYW5kIHVzZSBpdCBhbnl3aGVyZS4NC\nmdpdmUgaXQgYSBzdGFyIGlmIHlvdSBsaWtlIHRoZSBwcm9qZWN0\n-----END OPENSSH PRIVATE KEY-----\n\n(PS: If you base64 decode that, I left you a message.)"
+    },
+    {
+      "name": "",
+      "ext": "env",
+      "type": "FILE",
+      "nodes": [],
+      "parentNode": null,
+      "content": "# TODO: Remember to add this file to .gitignore before pushing to GitHub!!!\nSUPER_SECRET_DB_PASSWORD=admin123\nAWS_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE\n\n# Current struggles\nHOW_TO_EXIT_VIM=true\nHAS_READ_THE_DOCS=false\nDAYS_WITHOUT_SEGFAULT=0\n\n# Workflow optimization\nSPOTIFY_PLAYLIST=\"lofi beats to copy-paste Stack Overflow to\"\n\n# Don't tell anyone I used AI for this\nSECRET_PROMPT=\"how to center a div in css please help me i have been trying for 3 hours\"\n\n# Note to self: look up what a 'pointer' actually is tomorrow"
+    },
+    {
       "name": "README",
       "ext": "md",
       "type": "FILE",
@@ -17,7 +76,7 @@
       "type": "FILE",
       "nodes": [],
       "parentNode": null,
-      "content": "# Contact Information\n\nFeel free to reach out for collaborations or opportunities.\n\n- **Email**: `singh.sahil.shivkumar@gmail.com`\n- **LinkedIn**: [sahil-singh-typesafe-rusty](https://linkedin.com/in/sahil-singh-typesafe-rusty)\n- **GitHub**: [sahil-singh-typesafe-rusty](https://github.com/TYPESAFE-RUSTY)\n\n> Note: Please refer to my LinkedIn for the most detailed professional timeline."
+      "content": "## 📬 Let's Connect!\n\nI'm always open to discussing new opportunities, systems programming, or just nerding out over low-level tech.\n\n- 📧 **Email:**[singh.sahil.shivkumar@gmail.com](mailto:singh.sahil.shivkumar@gmail.com)\n- 🐙 **GitHub:**[sahil-singh-typesafe-rusty](https://github.com/TYPESAFE-RUSTY)\n- 💼 **LinkedIn:**[sahil-singh-typesafe-rusty](https://linkedin.com/in/sahil-singh-typesafe-rusty)\n\n*\"The best way to reach me is probably by opening an issue on one of my repos.\"*"
     },
     {
       "name": "education",
