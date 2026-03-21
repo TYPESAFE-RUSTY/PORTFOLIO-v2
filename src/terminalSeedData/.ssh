@@ -1,0 +1,12 @@
+# 󰣀 ID_RSA_DUMP
+
+```text
+-----BEGIN OPENSSH PRIVATE KEY-----
+VGhpcyBwcm9qZWN0IHdhcyBtYWRlIHBvc3NpYmxlIHVzaW5nIGZ
+ha2V0ZXJtIHRyeSBpdCBvdXQgbm93Lg0KcnVuIG5wbSBpIGZha2
+V0ZXJtIHRvIGluc3RhbGwgYW5kIHVzZSBpdCBhbnl3aGVyZS4NC
+mdpdmUgaXQgYSBzdGFyIGlmIHlvdSBsaWtlIHRoZSBwcm9qZWN0
+-----END OPENSSH PRIVATE KEY-------
+```
+
+󰈡 HINT: If you base64 decode that buffer, I left you a message.
