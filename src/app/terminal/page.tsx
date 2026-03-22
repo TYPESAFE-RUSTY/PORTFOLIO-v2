@@ -225,7 +225,9 @@ export default function Terminal() {
                     {element.output || ""}
                   </CatppuccinMarkdown>
                 ) : (
-                  <pre className=" text-wrap">{element.output}</pre>
+                  <pre className="text-sm md:text-md text-wrap">
+                    {element.output}
+                  </pre>
                 )}
               </CommandOutput>
             );
@@ -251,12 +253,15 @@ export default function Terminal() {
           name="input"
           className="bg-transparent text-ctp-yellow outline-none border-none w-full"
           value={input}
-          autoComplete="off"
-          autoFocus
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           type="text"
           ref={inputRef}
+          autoCapitalize="none"
+          spellCheck="false"
+          autoCorrect="off"
+          autoComplete="off"
+          autoFocus
         />
       </form>
     </div>

@@ -7,4 +7,4 @@
 - [x] Write Node.js prebuild script for JSON generation
 - [ ] Question life decisions
 - [ ] Rewrite portfolio in   Rust via WASM
-- [ ] Center a __div__ without using flexbox
+- [ ] Center __div__ without using flexbox

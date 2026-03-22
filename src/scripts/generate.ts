@@ -88,9 +88,7 @@ function buildTree(currentPath: string): FileNode[] {
         content = fs.readFileSync(fullPath, "utf-8");
       } catch (err) {
         console.log(
-          chalk.yellow(
-            `⚠️ Could not read file: ${fullPath}. Skipping content.`,
-          ),
+          chalk.yellow(`⚠️ Could not read file: ${fullPath}. Skipping content.`),
         );
       }
 
